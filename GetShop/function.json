@@ -1,0 +1,30 @@
+{
+    "bindings": [
+      {
+        "authLevel": "function",
+        "type": "httpTrigger",
+        "direction": "in",
+        "name": "req",
+        "methods": [
+          "get",
+          "post"
+        ]
+      },
+      {
+        "type": "http",
+        "direction": "out",
+        "name": "res"
+      },
+      {
+        "type": "table",
+        "name": "shop",
+        "tableName": "Shops",
+        "partitionKey": "{company}",
+        "rowKey": "{shop}",
+        "take": 1,
+        "connection": "PLAYGROUND_STORAGE_CONNECTIONSTRING",
+        "direction": "in"
+      }
+    ],
+    "disabled": false
+  }
